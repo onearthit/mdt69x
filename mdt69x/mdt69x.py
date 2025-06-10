@@ -359,7 +359,7 @@ class Controller:
         return self._send_command(self._voltage_commands_set[3], voltage)
 
     def set_xyz_voltage(self, voltage_x, voltage_y, voltage_z):
-        return self._send_command("XYZVOLTAGE=", str("%.4f,%.4f,%.4f" % (voltage_x, voltage_y, voltage_z)))
+        return self._send_command("XYZVOLTAGE=", str("%d,%d,%d" % (voltage_x, voltage_y, voltage_z)))
 
     def get_xyz_voltage(self):
         result = self._send_query("XYZVOLTAGE?")
